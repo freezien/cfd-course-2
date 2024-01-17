@@ -48,7 +48,9 @@ const Blog = () => {
                     <div className="img">
                       <Link to={PATHS.BLOG + `/${slug}`}>
                         <img
-                          src={image}
+                          src={
+                            image || "https://picsum.photos/300/300?random=1"
+                          }
                           alt="Khóa học CFD"
                           className="course__thumbnail"
                         />

@@ -23,6 +23,7 @@ const useForm = (initialValue, rules) => {
   return {
     form,
     error,
+    setForm,
     register,
     validate: _validate,
   };

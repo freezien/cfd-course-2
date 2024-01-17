@@ -21,11 +21,11 @@ const ContactForm = ({}) => {
       name: [requireRule("Hãy nhập họ và tên")],
       email: [
         requireRule("Vui lòng nhập email"),
-        regrexRule("email", "Vui lòng nhập đúng định dạng email"),
+        regrexRule("Email", "Vui lòng nhập đúng định dạng email"),
       ],
       phone: [
         requireRule("Vui lòng nhập phone"),
-        regrexRule("phone", "Vui lòng nhập đúng định dạng phone"),
+        regrexRule("Phone", "Vui lòng nhập đúng định dạng phone"),
       ],
       topic: [requireRule("Vui lòng chọn chủ đề")],
       content: [requireRule("Nhập mô tả")],
@@ -53,27 +53,17 @@ const ContactForm = ({}) => {
       {" "}
       <div className="form">
         <h3 className="title --t3">Gửi yêu cầu hỗ trợ</h3>
-        <div className="form-group">
-          <Input
-            label="Họ và tên"
-            placeholder="Nhập họ và tên"
-            {...register("name")}
-          />
-        </div>
-        <div className="form-group">
-          <Input
-            label="Email"
-            placeholder="Nhập email"
-            {...register("email")}
-          />
-        </div>
-        <div className="form-group">
-          <Input
-            label="Số điện thoại"
-            placeholder="Nhập số điện thoại"
-            {...register("phone")}
-          />
-        </div>
+        <Input
+          label="Họ và tên"
+          placeholder="Nhập họ và tên"
+          {...register("name")}
+        />
+        <Input label="Email" placeholder="Nhập email" {...register("email")} />
+        <Input
+          label="Số điện thoại"
+          placeholder="Nhập số điện thoại"
+          {...register("phone")}
+        />
         <div className="form-group">
           <Select
             label="chủ đề cần hỗ trợ"
@@ -99,13 +89,11 @@ const ContactForm = ({}) => {
             {...register("topic")}
           />
         </div>
-        <div className="form-group">
-          <Input
-            label="Mô tả"
-            renderInput={(inputProps) => <TextArea {...inputProps} />}
-            {...register("content")}
-          />
-        </div>
+        <Input
+          label="Mô tả"
+          renderInput={(inputProps) => <TextArea {...inputProps} />}
+          {...register("content")}
+        />
         <div className="btncontrol">
           <Button variant="primary" onClick={_onSubmit}>
             Gửi

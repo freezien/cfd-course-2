@@ -8,7 +8,7 @@ const Input = ({
   ...inputProps
 }) => {
   return (
-    <>
+    <div className="form-group">
       <label className="label">
         {label} {required && <span>*</span>}
       </label>
@@ -19,7 +19,7 @@ const Input = ({
         />
       )}
       <p className="error">{error || ""}</p>
-    </>
+    </div>
   );
 };
 

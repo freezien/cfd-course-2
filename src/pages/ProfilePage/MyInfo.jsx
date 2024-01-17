@@ -88,63 +88,47 @@ const MyInfo = () => {
       <div className="tab__content-item" style={{ display: "block" }}>
         <form onSubmit={onSubmit} className="form">
           <div className="form-container">
-            <div className="form-group">
-              <Input
-                label="Họ và tên"
-                placeholder="Vui lòng nhập họ và tên"
-                required
-                {...register("firstName")}
-              />
-            </div>
-            <div className="form-group">
-              <Input
-                label="Số điện thoại"
-                placeholder="Vui lòng nhập số điện thoại"
-                required
-                {...register("phone")}
-              />
-            </div>
+            <Input
+              label="Họ và tên"
+              placeholder="Vui lòng nhập họ và tên"
+              required
+              {...register("firstName")}
+            />
+            <Input
+              label="Số điện thoại"
+              placeholder="Vui lòng nhập số điện thoại"
+              required
+              {...register("phone")}
+            />
           </div>
           <div className="form-container">
-            <div className="form-group">
-              <Input
-                label="Email"
-                placeholder="Vui lòng nhập Email"
-                required
-                disabled
-                {...register("email")}
-              />
-            </div>
-            <div className="form-group">
-              <Input
-                label="Mật khẩu"
-                required
-                disabled
-                {...register("password")}
-              />
-            </div>
-          </div>
-          <div className="form-group">
             <Input
-              label="Facebook URL"
-              placeholder="Vui lòng nhập facebook"
-              {...register("facebookURL")}
+              label="Email"
+              placeholder="Vui lòng nhập Email"
+              required
+              disabled
+              {...register("email")}
+            />
+            <Input
+              label="Mật khẩu"
+              required
+              disabled
+              {...register("password")}
             />
           </div>
-          <div className="form-group">
-            <Input label="Website" {...register("website")} />
-          </div>
-          <div className="form-container textarea">
-            <Input
-              label="Giới thiệu bản thân"
-              renderInput={(inputProps) => <TextArea {...inputProps} />}
-              {...register("introduce")}
-            />
-          </div>
-          <div className="form-group">
-            <div className="btnsubmit">
-              <button className="btn btn--primary">Lưu lại</button>
-            </div>
+          <Input
+            label="Facebook URL"
+            placeholder="Vui lòng nhập facebook"
+            {...register("facebookURL")}
+          />
+          <Input label="Website" {...register("website")} />
+          <Input
+            label="Giới thiệu bản thân"
+            renderInput={(inputProps) => <TextArea {...inputProps} />}
+            {...register("introduce")}
+          />
+          <div className="btnsubmit">
+            <button className="btn btn--primary">Lưu lại</button>
           </div>
         </form>
       </div>

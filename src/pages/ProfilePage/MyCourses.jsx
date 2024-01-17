@@ -1,13 +1,17 @@
 import React from "react";
+import { Link, useParams } from "react-router-dom";
+import { PATHS } from "../../constants/pathnames";
 
 const MyCourse = () => {
+  const { slug } = useParams();
+  console.log("slug", slug);
   return (
     <>
       <div className="tab__content-item" style={{ display: "block" }}>
         <div className="courses__list">
           <div className="courses__list-item">
             <div className="img">
-              <a href="course-detail.html">
+              <Link to={PATHS.COURSES + `/${slug}`}>
                 <img
                   src="https://cfdcircle.vn/files/thumbnails/ahvVmtDlrzUPhKLDrc4YkdA8iFbACauYCN76TSGs.jpg"
                   alt="Khóa học CFD"
@@ -16,7 +20,7 @@ const MyCourse = () => {
                 <span className="course__img-badge badge">
                   Offline | Online
                 </span>
-              </a>
+              </Link>
             </div>
             <div className="content">
               <p className="label">Front-End</p>
@@ -46,7 +50,7 @@ const MyCourse = () => {
           </div>
           <div className="courses__list-item">
             <div className="img">
-              <a href="course-detail.html">
+              <Link to={PATHS.COURSES + `/${slug}`}>
                 <img
                   src="https://cfdcircle.vn/files/thumbnails/9VVXxGDc4ujKCegv4zcejuxJ4gC8C1qeXnECvy7s.jpg"
                   alt="Khóa học CFD"
@@ -55,7 +59,7 @@ const MyCourse = () => {
                 <span className="course__img-badge badge">
                   Offline | Online
                 </span>
-              </a>
+              </Link>
             </div>
             <div className="content">
               <p className="label">Front-End</p>

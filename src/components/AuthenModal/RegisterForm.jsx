@@ -88,7 +88,7 @@ const RegisterForm = () => {
           </a>
         </div>
         <span className="line">Hoặc</span>
-        <Form onSubmit={onSubmit} className="form">
+        <form onSubmit={onSubmit} className="form">
           <Input
             label="Họ và tên"
             placeholder="Họ và tên"
@@ -115,40 +115,45 @@ const RegisterForm = () => {
             required
             {...register("confirmPassword")}
           />
-          <p className="form__argee" style={{ margin: "0 auto" }}>
-            Với việc đăng ký, bạn đã đồng ý{` `}
-            <Link
-              className="color--primary"
-              to={PATHS.PRIVACY}
-              onClick={() => closeAuthenModal()}
-            >
-              Chính Sách
-            </Link>
-            {` `}
-            &amp;
-            {` `}
-            <Link
-              className="color--primary"
-              to={PATHS.PRIVACY}
-              onClick={() => closeAuthenModal()}
-            >
-              {" "}
-              Điều Khoản
-            </Link>
-          </p>
-          <p className="form__argee" style={{ textAlign: "center" }}>
-            Bạn đã có tài khoản? {` `}
-            <span
-              className="color--primary btnmodal"
-              onClick={() => setRenderForm("login")}
-            >
-              Đăng nhập {` `}
-            </span>
-          </p>
-          <Button variant="primary" type="submit">
+          <div
+            className="form__bottom"
+            style={{ display: "block", textAlign: "center" }}
+          >
+            <p className="form__argee">
+              Với việc đăng ký, bạn đã đồng ý{` `}
+              <Link
+                className="color--primary"
+                to={PATHS.PRIVACY}
+                onClick={() => closeAuthenModal()}
+              >
+                Chính Sách
+              </Link>
+              {` `}
+              &amp;
+              {` `}
+              <Link
+                className="color--primary"
+                to={PATHS.PRIVACY}
+                onClick={() => closeAuthenModal()}
+              >
+                {" "}
+                Điều Khoản
+              </Link>
+            </p>
+            <p className="form__argee">
+              Bạn đã có tài khoản? {` `}
+              <span
+                className="color--primary btnmodal"
+                onClick={() => setRenderForm("login")}
+              >
+                Đăng nhập {` `}
+              </span>
+            </p>
+          </div>
+          <Button variant="primary" type="submit" style={{ width: "100%" }}>
             Đăng ký
           </Button>
-        </Form>
+        </form>
       </div>
     </>
   );

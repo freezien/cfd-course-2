@@ -7,13 +7,6 @@ import useForm from "../../hooks/useForm";
 import Button from "../../components/Button";
 import ComponentLoading from "../ComponentLoading";
 
-const Form = styled.form`
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  min-width: 425px;
-`;
-
 const LoginForm = () => {
   const { onLogin, renderForm, setRenderForm } = useAuthen();
   const [loading, setLoading] = useState(false);
@@ -25,7 +18,7 @@ const LoginForm = () => {
     {
       email: [
         requireRule("Vui lòng nhập email"),
-        regrexRule("email", "Vui lòng nhập đúng định dạng email"),
+        regrexRule("Email", "Vui lòng nhập đúng định dạng email"),
       ],
       password: [requireRule("Vui lòng nhập password")],
     }
@@ -71,7 +64,7 @@ const LoginForm = () => {
           </a>
         </div>
         <span className="line">Hoặc</span>
-        <Form onSubmit={onSubmit} className="form">
+        <form onSubmit={onSubmit} className="form">
           <Input
             label="Email"
             placeholder="Email"
@@ -102,7 +95,7 @@ const LoginForm = () => {
           <Button variant="primary" className="form__btn-register">
             Đăng nhập
           </Button>
-        </Form>
+        </form>
       </div>
     </>
   );

@@ -28,7 +28,7 @@ const validate = (rules, values) => {
           pattern = new RegExp(rule.regrex, "gi");
         }
         // check regrex
-        if (!pattern.test(values[ruleKey])) {
+        if (!!pattern.test(values[ruleKey])) {
           errObj[ruleKey] = rule.message || "Vui lòng nhập đúng định dạng";
           break;
         }

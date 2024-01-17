@@ -15,15 +15,14 @@ const useForm = (initialValue, rules) => {
   };
 
   const _validate = () => {
-    const errorObj = validate(rules, form);
-    setError(errorObj);
-    return errorObj;
+    const errorObject = validate(rules, form);
+    setError(errorObject);
+    return errorObject;
   };
 
   return {
     form,
     error,
-    setForm,
     register,
     validate: _validate,
   };

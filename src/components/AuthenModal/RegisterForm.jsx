@@ -22,7 +22,7 @@ const RegisterForm = () => {
   const [loading, setLoading] = useState(false);
   const { form, register, validate } = useForm(
     {
-      name: "",
+      firstName: "",
       email: "",
       password: "",
       confirmPassword: "",
@@ -49,9 +49,9 @@ const RegisterForm = () => {
   const onSubmit = (e) => {
     e.preventDefault();
     // Validate Form => error Object
-    let errorObj = validate();
-    if (Object.keys(errorObj)?.length > 0) {
-      console.log("Submit error", errorObj);
+    let errObj = validate();
+    if (Object.keys(errObj)?.length > 0) {
+      console.log("Submit error", errObj);
     } else {
       setLoading(true);
       console.log("Submit success", form);
